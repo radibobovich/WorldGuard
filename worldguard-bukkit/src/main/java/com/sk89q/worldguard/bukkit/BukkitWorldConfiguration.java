@@ -297,6 +297,7 @@ public class BukkitWorldConfiguration extends YamlWorldConfiguration {
         checkLiquidFlow = getBoolean("regions.protect-against-liquid-flow", false);
         regionWand = convertLegacyItem(getString("regions.wand", ItemTypes.LEATHER.getId()));
         maxClaimVolume = getInt("regions.max-claim-volume", 30000);
+        maxClaimArea = getInt("regions.max-claim-area", 2147483640);
         claimOnlyInsideExistingRegions = getBoolean("regions.claim-only-inside-existing-regions", false);
         setParentOnClaim = getString("regions.set-parent-on-claim", "");
         boundedLocationFlags = getBoolean("regions.location-flags-only-inside-regions", false);

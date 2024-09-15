@@ -305,6 +305,11 @@ public final class RegionCommands extends RegionCommandsBase {
                     "Currently, it must be " + Integer.MAX_VALUE + " or smaller. Please contact a server administrator.");
         }
 
+        if(wcfg.maxClaimArea >= Integer.MAX_VALUE){
+            throw new CommandException("The maximum claim area get in the configuration is higher than is supported. " +
+                    "Currently, it must be " + Integer.MAX_VALUE + " or smaller. Please contact a server administrator.");
+        }
+
         // Check claim volume
         if (!permModel.mayClaimRegionsUnbounded()) {
             if (region instanceof ProtectedPolygonalRegion) {
@@ -312,9 +317,14 @@ public final class RegionCommands extends RegionCommandsBase {
             }
 
             if (region.volume() > wcfg.maxClaimVolume) {
-                player.printError("This region is too large to claim.");
+                player.printError("This region volume is too large to claim.");
                 player.printError("Max. volume: " + wcfg.maxClaimVolume + ", your volume: " + region.volume());
                 return;
+            }
+
+            if (region.area() > wcfg.maxClaimArea) {
+                player.printError("This region area is too large to claim.");
+                player.printError("Max. area: " + wcfg.maxClaimArea + ", your area: " + region.area());
             }
         }
 

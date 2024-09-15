@@ -499,6 +499,13 @@ public abstract class ProtectedRegion implements ChangeTracked, Comparable<Prote
     public abstract int volume();
 
     /**
+     * Get the area of this region.
+     *
+     * @return the area of this region in blocks
+     */
+    public abstract int area();
+
+    /**
      * Check to see if a point is inside this region.
      *
      * @param pt The point to check

@@ -128,6 +128,7 @@ public abstract class WorldConfiguration {
     public Set<EntityType> blockCreatureSpawn;
     public boolean allowTamedSpawns;
     public int maxClaimVolume;
+    public int maxClaimArea;
     public boolean claimOnlyInsideExistingRegions;
     public String setParentOnClaim;
     public int maxRegionCountPerPlayer;

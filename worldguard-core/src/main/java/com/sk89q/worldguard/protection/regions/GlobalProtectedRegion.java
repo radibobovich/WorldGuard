@@ -74,6 +74,11 @@ public class GlobalProtectedRegion extends ProtectedRegion {
     }
 
     @Override
+    public int area(){
+        return 0;
+    }
+
+    @Override
     public int volume() {
         return 0;
     }
