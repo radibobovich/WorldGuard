@@ -162,14 +162,15 @@ public class ProtectedCuboidRegion extends ProtectedRegion {
     @Override
     public int area(){
         int xLength = max.getBlockX() - min.getBlockX() + 1;
-        int yLength = max.getBlockY() - min.getBlockY() + 1;
+        int zLength = max.getBlockZ() - min.getBlockZ() + 1;
+
 
         try {
-            long v = MathUtils.checkedMultiply(xLength, yLength);
-            if (v > Integer.MAX_VALUE) {
+            long area = MathUtils.checkedMultiply(xLength, zLength);
+            if (area > Integer.MAX_VALUE) {
                 return Integer.MAX_VALUE;
             } else {
-                return (int) v;
+                return (int) area;
             }
         } catch (ArithmeticException e) {
             return Integer.MAX_VALUE;

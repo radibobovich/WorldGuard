@@ -321,7 +321,7 @@ public final class RegionCommands extends RegionCommandsBase {
                 player.printError("Max. volume: " + wcfg.maxClaimVolume + ", your volume: " + region.volume());
                 return;
             }
-
+            log.info("Region area is " + region.area());
             if (region.area() > wcfg.maxClaimArea) {
                 player.printError("This region area is too large to claim.");
                 player.printError("Max. area: " + wcfg.maxClaimArea + ", your area: " + region.area());
